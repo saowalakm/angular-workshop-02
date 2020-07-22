@@ -11,7 +11,8 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getAllProoduct(): Observable<Product[]> {     
-    return this.http.get<Product[]>('https:Kpproduct.free.beeceptor.com/products');   
+    return this.http.get<Product[]>
+    ('http://165.22.255.58:3000/products');   
   }
 
   // getAllProduct(): Product[]{
