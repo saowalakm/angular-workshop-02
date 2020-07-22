@@ -20,8 +20,12 @@ export class ProductListComponent implements OnInit {
   }
 
   getAll(): void{     
-    this.service.getAllProoduct().subscribe((products) => 
+    this.service.getAllProduct().subscribe((products) => 
     { return (this.products = products); });   
   }
+
+  onRatingClicked(message: string): void{ 
+    console.log('Click on rating'); 
+  } 
 
 }

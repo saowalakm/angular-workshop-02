@@ -9,6 +9,7 @@ import { ProductNamePipe } from './product-name.pipe';
 import { ProductSpacePipe } from './product-space.pipe';
 import { FilterProductPipe } from './filter-product.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductNamePipe,
     ProductSpacePipe,
     FilterProductPipe,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
