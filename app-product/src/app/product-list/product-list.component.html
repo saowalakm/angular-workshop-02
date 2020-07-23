@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-md-2">Filter by:</div>  
         <div class="col-md-4">
-          <input type="text" filterProduct="filterData"/>
+          <input type="text" [(ngModel)]="filterData" />
           <select> 
             <option>Choosing</option>  
             <option>TODO</option>  
@@ -15,9 +15,8 @@
         </div> 
       </div>  
       <div class="row"> 
-        <div class="col-md-6">
-          Filtered by ...
-        </div>
+        <!-- <div class="col-md-6"> Filtered by ... </div> -->
+        <div class="col-md-6"> Filtered by {{ filterData }}</div>
       </div>
       <div class="table-responsive">
         <table class="table">
@@ -36,7 +35,7 @@
             </tr>
           </thead>
           <tbody *ngIf="products.length > 0">
-            <tr *ngFor="let product of products">
+            <tr *ngFor="let product of products | filterProduct: filterData">
               <th>
                 XXX
               </th>
@@ -45,9 +44,7 @@
               <th>{{ product.price.toFixed(2) }}</th>  
               <th>Yes</th> 
               <th>
-                <app-rating [rating]="product.rating" 
-                  (ratingClicked)="onRatingClicked($event)">
-                </app-rating>
+                <app-rating [rating]="product.rating" (ratingClicked)="onRatingClicked($event)"></app-rating>
               </th>
             </tr>
           </tbody>

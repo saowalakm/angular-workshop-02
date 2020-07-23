@@ -25,7 +25,8 @@ export class ProductListComponent implements OnInit {
   }
 
   onRatingClicked(message: string): void{ 
-    console.log('Click on rating'); 
+    // console.log('Click on rating'); 
+    alert(message);
   } 
 
 }

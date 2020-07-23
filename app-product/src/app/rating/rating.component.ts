@@ -7,20 +7,19 @@ import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angu
 })
 export class RatingComponent implements OnChanges {
   @Input() rating: number;
+  @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>(); 
 
   starWidth: number;
 
-  // constructor() { }
+  constructor() { }
 
   ngOnChanges(): void {
     console.log(this.rating);
     this.starWidth = (75/5) * this.rating;
   }
 
-  @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>(); 
-
   onClickRating(): void {   
-    console.log('Click on rating');   
+    console.log('Click on rating'); 
     this.ratingClicked.emit('Rating ${this.rating} was clicked'); 
   }
 
